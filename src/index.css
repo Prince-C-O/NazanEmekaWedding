@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 30 25% 98%;
+    --foreground: 30 10% 15%;
+    --card: 30 25% 99%;
+    --card-foreground: 30 10% 15%;
+    --popover: 30 25% 99%;
+    --popover-foreground: 30 10% 15%;
+    --primary: 350 45% 75%;
+    --primary-foreground: 30 25% 98%;
+    --secondary: 80 20% 35%;
+    --secondary-foreground: 30 25% 98%;
+    --muted: 30 15% 92%;
+    --muted-foreground: 30 10% 40%;
+    --accent: 45 80% 55%;
+    --accent-foreground: 30 10% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 350 45% 75%;
+    --radius: 0.75rem;
+    
+    --blush-pink: 350 45% 85%;
+    --olive-green: 80 20% 35%;
+    --gold: 45 80% 55%;
+    --cream: 30 25% 96%;
+    --champagne: 40 30% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #F4E4BC 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-wedding-gradient {
+    background: linear-gradient(135deg, hsl(var(--blush-pink) / 0.1) 0%, hsl(var(--cream)) 50%, hsl(var(--gold) / 0.1) 100%);
+  }
+  .shadow-wedding {
+    box-shadow: 0 4px 20px -2px hsl(var(--blush-pink) / 0.3), 0 8px 40px -4px hsl(var(--gold) / 0.2);
+  }
+  .border-wedding {
+    border: 1px solid hsl(var(--gold) / 0.3);
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
